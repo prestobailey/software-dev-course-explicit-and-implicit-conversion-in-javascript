@@ -18,9 +18,10 @@ Use console.log() to clearly show the before-and-after type conversions.
 
 */
 
-
-let result = "5" - 2;
+// Explicit fix: Using Number() for intention 
+let result = Number("5") - 2;
 console.log("The result is: " + result);
+
 
 let isValid = Boolean("false");
 if (isValid) {
@@ -28,5 +29,16 @@ if (isValid) {
 }
 
 let age = "25";
-let totalAge = age + 5;
+// Convert the tring to a Number() for correct value and addition. 
+let totalAge = Number(age) + 5;
 console.log("Total Age: " + totalAge);
+
+// Implicit Type Conversion
+let leaderboardResult = null + 1500; // null equates to 0
+console.log(leaderboardResult); // Output is 1500
+
+// Explicit Type Conversion
+let str = "146.92"; // Establishing a number as a string.
+let num = parseFloat(str); // Changing it back to accomadate for the true nature. 
+console.log(num); // Prints out 146.92
+console.log(typeof num); 
